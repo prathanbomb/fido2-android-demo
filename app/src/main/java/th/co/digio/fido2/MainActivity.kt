@@ -1,4 +1,4 @@
-package com.entersekt.fido2
+package th.co.digio.fido2
 
 import android.content.Intent
 import android.content.IntentSender
@@ -8,6 +8,7 @@ import android.util.Base64
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import com.entersekt.fido2.R
 import com.google.android.gms.fido.Fido
 import com.google.android.gms.fido.fido2.api.common.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
     private fun registerFido2() {
         // All the option parameters should come from the Relying Party / server
         val options = PublicKeyCredentialCreationOptions.Builder()
-            .setRp(PublicKeyCredentialRpEntity("strategics-fido2.firebaseapp.com", "Fido2Demo", null))
+            .setRp(PublicKeyCredentialRpEntity("fido2-f59a1.firebaseapp.com", "Fido2Demo", null))
             .setUser(
                 PublicKeyCredentialUserEntity(
                     "demo@example.com".toByteArray(),
@@ -91,7 +92,10 @@ class MainActivity : AppCompatActivity() {
             if (fido2PendingIntent.hasPendingIntent()) {
                 try {
                     Log.d(LOG_TAG, "launching Fido2 Pending Intent")
-                    fido2PendingIntent.launchPendingIntent(this@MainActivity, REQUEST_CODE_REGISTER)
+                    fido2PendingIntent.launchPendingIntent(
+                        this@MainActivity,
+                        REQUEST_CODE_REGISTER
+                    )
                 } catch (e: IntentSender.SendIntentException) {
                     e.printStackTrace()
                 }
@@ -102,7 +106,7 @@ class MainActivity : AppCompatActivity() {
     private fun signFido2() {
         // All the option parameters should come from the Relying Party / server
         val options = PublicKeyCredentialRequestOptions.Builder()
-            .setRpId("strategics-fido2.firebaseapp.com")
+            .setRpId("fido2-f59a1.firebaseapp.com")
             .setAllowList(
                 listOf(
                     PublicKeyCredentialDescriptor(
@@ -121,7 +125,10 @@ class MainActivity : AppCompatActivity() {
             if (fido2PendingIntent.hasPendingIntent()) {
                 try {
                     Log.d(LOG_TAG, "launching Fido2 Pending Intent")
-                    fido2PendingIntent.launchPendingIntent(this@MainActivity, REQUEST_CODE_SIGN)
+                    fido2PendingIntent.launchPendingIntent(
+                        this@MainActivity,
+                        REQUEST_CODE_SIGN
+                    )
                 } catch (e: IntentSender.SendIntentException) {
                     e.printStackTrace()
                 }
