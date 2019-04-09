@@ -49,7 +49,7 @@ For this sample app I have set the RP ID to `strategics-fido2.firebaseapp.com` a
 ]
 ```
 
-on <https://strategics-fido2.firebaseapp.com/.well-known/assetlinks.json> where:
+on <https://fido2-f59a1.firebaseapp.com/.well-known/assetlinks.json> where:
 
 `package_name` matches the `applicationId` in my `build.gradle` and the `sha256_cert_fingerprints` matches the
 fingerprint of my signing key. This can be found by running the [get_cert_fingerprint.sh script included in this project][4]
