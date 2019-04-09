@@ -32,7 +32,7 @@ is the RP ID with prepended "//". Privileged (browser) API doesn't need the chec
 So for Android apps you need to host an `assetlinks.json` file on `https://<rp_id>/.well-known/assetlinks.json` to allow
 it to use the Fido2 apis for that domain.
 
-For this sample app I have set the RP ID to `strategics-fido2.firebaseapp.com` and I am hosting this `assetlinks.json`:
+For this sample app I have set the RP ID to `fido2-f59a1.firebaseapp.com` and I am hosting this `assetlinks.json`:
 
 ```json
 [
