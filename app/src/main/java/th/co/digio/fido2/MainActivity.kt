@@ -14,7 +14,6 @@ import com.google.android.gms.fido.fido2.api.common.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.security.SecureRandom
 
-
 class MainActivity : AppCompatActivity() {
     companion object {
         private const val LOG_TAG = "Fido2Demo"
